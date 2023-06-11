@@ -1,6 +1,9 @@
 const express = require('express')
 const route = express.Router()
 
-const mainController = require('../controllers/mainController')
+const { login, home } = require('../controllers/mainController')
 
-route.get('/', mainController)
+route.get('/', login)
+route.post('/home', home)
+
+module.exports = route
