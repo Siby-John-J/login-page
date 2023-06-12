@@ -6,6 +6,4 @@ let schema = mongoose.Schema({
     password: String
 })
 
-// module.exports.main = db.model('userData', schema)
-
 let collection = db.model('Dataz', schema)

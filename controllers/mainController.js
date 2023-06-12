@@ -15,7 +15,7 @@ module.exports.login = (req, res) => {
 }
 
 module.exports.home = (req, res) => {
-    // console.log(req.body)
+    console.log(req.url)
     if(req.body) {
         res.send(`your name is ${req.body.name} and ${req.body.pass}`)
     } else {
@@ -23,4 +23,20 @@ module.exports.home = (req, res) => {
     }
     
     // main.insertOne({username: req.body.name, password: req.body.pass})
+}
+
+module.exports.books = (req, res) => {
+    console.log(req.params)
+    let bookCollections = {
+        first: 'winds_of_winter',
+        second: 'fire and blood',
+        third: 'clash of king'
+    }
+    
+    if(req.params.bookname === bookCollections.first) {
+        res.send('youre in ' + bookCollections.first)
+    } else {
+        res.json(bookCollections)
+    }
+
 }
